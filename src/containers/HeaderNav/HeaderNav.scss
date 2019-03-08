@@ -1,3 +1,11 @@
+@import '../../styles/shared.scss';
+.ui.menu.top-menu {
+  border: none;
+  .logo {
+    width: $sidebar-left-width;
+  }
+  /* ... */
+}
 .ui.menu.top-menu {
   border: none;
   .logo {
