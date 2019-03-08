@@ -18,21 +18,8 @@
   }
 }
 
+
 .sidebar-item-alignment-container {
   display: flex;
   align-items: center;
-}
-.ui.menu.fixed.side-nav {
-  background-color: #f5f5f5;
-  margin-top: 64px;
-  overflow-y: auto;
-  padding-bottom: 64px;
-
-  .sidebar-item:hover {
-    background: #ebebeb;
-  }
-}
-
-.side-nav.ui.vertical.menu {
-  width: 17rem;
 }

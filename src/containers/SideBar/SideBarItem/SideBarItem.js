@@ -1,24 +1,32 @@
 import React from 'react';
 import {Icon, Menu} from "semantic-ui-react";
 import './SideBarItem.scss';
+import {Link, withRouter} from 'react-router-dom';
 
-export function SideBarItem(props) {
-  // React will ignore custom boolean attributes, therefore we pass a string
-  // we use this attribute in our SCSS for styling
-  const highlight = props.highlight ? 'highlight-item' : null;
+export class SideBarItem extends React.Component {
   render() {
-  return (
-    <Menu borderless vertical stackable fixed='left' className='side-nav'>
-      <SideBarItem highlight={true}  label='Home' icon='home'/>
-      <SideBarItem label='Trending' icon='fire'/>
-      <SideBarItem label='Followers' icon='spy'/>
-      <SideBarItem label='History' icon='history'/>
-      <SideBarItem label='Watch later' icon='clock'/>
-      <SideBarItem label='Liked videos' icon='thumbs up'/>
-      <SideBarItem label='Movies and Shows' icon='film'/>
-      <SideBarItem label='Report history' icon='flag'/>
-      <SideBarItem label='Help' icon='help circle'/>
-      <SideBarItem label='Send feedback' icon='comment'/>
-    </Menu>
-  );
+    // React will ignore custom boolean attributes, therefore we pass a string
+    // we use this attribute in our SCSS for styling
+    const highlight = this.shouldBeHighlighted() ? 'highlight-item' : null;
+    return (
+      <Link to={{pathname: this.props.path}}>
+        <Menu.Item className={['sidebar-item', highlight].join(' ')}>
+          <div className='sidebar-item-alignment-container'>
+            <span><Icon size='large' name={this.props.icon}/> </span>
+            <span>{this.props.label}</span>
+          </div>
+        </Menu.Item>
+      </Link>
+    );
+  }
+
+  shouldBeHighlighted() {
+    const {pathname} = this.props.location;
+    if (this.props.path === '/') {
+      return pathname === this.props.path;
+    }
+    return pathname.includes(this.props.path);
+  }
 }
+
+export default withRouter(SideBarItem);

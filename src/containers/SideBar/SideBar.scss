@@ -2,23 +2,21 @@
 
 $sidebar-hover-color: #ebebeb;
 .ui.menu.fixed.side-nav {
-  /* ... */
-  margin-top: $header-nav-height;
-  padding-bottom: $header-nav-height;
-  /*...*/
-}
-
-.ui.menu.fixed.side-nav {
   background-color: #f5f5f5;
-  margin-top: 64px;
+  margin-top: $header-nav-height;
   overflow-y: auto;
-  padding-bottom: 64px;
+  padding-bottom: $header-nav-height;
 
   .sidebar-item:hover {
+    background: $sidebar-hover-color;
+  }
+
+  .subscription:hover {
     background: #ebebeb;
+    cursor: pointer;
   }
 }
 
 .side-nav.ui.vertical.menu {
-  width: 17rem;
+  width: $sidebar-left-width;
 }
