@@ -1,68 +1,111 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 1 About
+This repository is the source code for BetterPlace Full Stack Hiring challenge task is to create a full stack web-app for an aggregator of top Youtube channels.
 
-## Available Scripts
+# Features
+This application includes the major features of Youtube such as
+* Rank 
+* Grade 
+* views 
+* Channel name
+* Uploads
+* Subscribers
+* home feed with infinite scroll
+* trending videos
+* searching for videos
+* watching videos
+* displaying comments and video details
 
-In the project directory, you can run:
 
-### `npm start`
+# 2 Screenshots
+UI-wise this application looks **almost exactly like the original Youtube application**
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It uses real data by leveraging the [Youtube Data API v3](https://developers.google.com/youtube/v3/docs/).
+![Youtube in React Home feed](images/youtube-react-home-feed.png)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+![Youtube in React Watch-1](images/youtube-react-watch-1.png)
 
-### `npm test`
+![Youtube in React Watch-2](images/youtube-react-watch-2.png)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 3 How to run this application
+This application loads information using the [Youtube Data API v3](https://developers.google.com/youtube/v3/docs/).
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+To use it, you need to set up a [Youtube Data v3 API key](https://productioncoder.com/build-youtube-in-react-part-19/) and run the project with `npm` or `yarn`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Below, you'll find a step by step explanation**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 3.1. Getting a Youtube Data API key
+1. Head over to the [Google developers console](https://console.developers.google.com)
+2. Create a new project by clicking on `Select project` drop down right next to the logo. Click the `New Project` button an give it a speaking name.
+3. Select your project by choosing it in the `Select Dropdown` directly next to the logo in the header.
+4. Click the `Enable APIs and Services` button
+5. Search for `youtube data`
+6. Click on the `Youtube Data API v3`
+7. Click the blue enable button
+8. In the dashboard, click `Credentials` on the left sidebar
+9. Click the `Create Credential` button
+10. Which API are you using: `Youtube Data API v3`
+11. Where will you be calling the API from: `Web browser`
+12. What data are you accessing: `Public data`
+13. Click the `What credentials do I need button`
+14. **Copy the API key, and paste it into `src/App.js`**
+```
+const API_KEY = 'AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 3.2. Install the dependencies
+Install the dependencies by running
+```
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you are using [yarn](https://yarnpkg.com/lang/en/), please run
+```
+yarn install
+```
 
-## Learn More
+## 3.3. Running the application
+**To run the application, execute**
+```
+npm start
+```
+or with [yarn](https://yarnpkg.com/lang/en/)
+```
+yarn start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 4 Tests
+This project contains an extensive suite of tests and makes use of [Jest](https://jestjs.io/) and [Enzyme](https://github.com/airbnb/enzyme).
 
-### Code Splitting
+Run all tests by executing.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+npm test
+```
 
-### Analyzing the Bundle Size
+You can also use [yarn](https://yarnpkg.com/lang/en/) to run the tests.
+```
+yarn test
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+# Technologies Used
+* [React / create-react-app](https://github.com/facebook/create-react-app)
+* [Redux](https://redux.js.org/)
+* [Redux-saga](https://redux-saga.js.org/)
+* [Redux-reselect](https://github.com/reduxjs/reselect)
+* [Jest](https://jestjs.io/)
+* [Enzyme](https://airbnb.io/enzyme/)
+* [Semantic UI](https://react.semantic-ui.com/)
+* CSS Grid / Flexbox
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+# 5 Disclaimer
+This project is **solely made for challenge purpose** and is created under **fair use**.
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+It is **not intended to create any kind of Youtube competitor**, but to teach advanced concepts in frontend development.
