@@ -1,5 +1,5 @@
 # 1 About
-This repository is the source code for BetterPlace Full Stack Hiring challenge task is to create a full stack web-app for an aggregator of top Youtube channels.
+This repository is the source code for  to create a full stack web-app for an aggregator of top Youtube channels.
 
 # Features
 This application includes the major features of Youtube such as
